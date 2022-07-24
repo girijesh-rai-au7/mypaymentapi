@@ -19,7 +19,7 @@ function loadScript(src) {
 const __DEV__ = document.domain === 'localhost'
 
 function App() {
-	const [name, setName] = useState('Mehul')
+	const [name, setName] = useState('Girijesh')
 
 	async function displayRazorpay() {
 		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
@@ -36,11 +36,11 @@ function App() {
 		console.log(data)
 
 		const options = {
-			key: __DEV__ ? 'rzp_test_uGoq5ABJztRAhk' : 'PRODUCTION_KEY',
+			key: __DEV__ ? 'rzp_test_f03SCwWAPglFOk' : 'PRODUCTION_KEY',
 			currency: data.currency,
 			amount: data.amount.toString(),
 			order_id: data.id,
-			name: 'Donation',
+			name: 'Electronics',
 			description: 'Thank you for nothing. Please give us some money',
 			image: 'http://localhost:1337/logo.svg',
 			handler: function (response) {
@@ -65,13 +65,13 @@ function App() {
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
 				</p>
-				<a
+				<a href 
 					className="App-link"
 					onClick={displayRazorpay}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Donate $5
+					Electronics $5
 				</a>
 			</header>
 		</div>
